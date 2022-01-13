@@ -1,0 +1,20 @@
+{
+              "overheating": "Try to uninstall apps, clear the cache and keep it away from the sun.",
+             "wet": "Do not try to turn the phone on. Then remove the battery and place the phone in rice.",
+             "dropped": "If your screen is broken, you should go to a repair shop to get it fixed.",
+             "apps": "You may have full storage on your phone or the app is not available in your country.",
+             "screen": "Restart your phone, if that does not fix your problem go to a repair shop.",
+             "power": "Make sure you have left in charge for many hours before trying to turn it on again.",
+             "slow": "Clean your phone by deleting unused apps and clear cache data.",
+             "battery": "Turn down screen brightness, turn off GPS and Bluetooth and enable battery saving mode.",
+             "storage": "Clear out photos, videos etc. You could also delete applications.",
+             "freezes": "Restart the phone, and try uninstalling and downloading the app. Clearing the cache may also help",
+             "hot": "Try to uninstall apps, clear the cache and keep it away from the sun.",
+             "display": "Restart your phone, if that does not fix your problem go to a repair shop.",
+             "water": "Do not try to turn the phone on. Then remove the battery and place the phone in rice.",
+             "charge": "You may have full storage on your phone or the app is not available in your country.",
+             "warm": "Try to uninstall apps, clear the cache and keep it away from the sun.",
+             "dies": "Make sure you have left in charge for many hours before trying to turn it on again.",
+             "die": "Make sure you have left in charge for many hours before trying to turn it on again."
+
+             }
