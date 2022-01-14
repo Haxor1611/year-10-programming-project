@@ -4,8 +4,11 @@ import time
 import json
 
 # example for the program
+with open("IDS.json", "r") as r:
+    casestring = r.read()
+    r.close()
 
-caseIds = [2243, 3432, 7645, 8768]
+caseIds = json.loads(casestring)
 with open("keywords.json", "r") as f:
     keywordString = f.read()
     f.close()
@@ -22,7 +25,7 @@ solutions = json.loads(solutionString)
 def caseIdGenerate(IDS):
     # getting a random integer
     caseID = random.randint(1, 9999)
-    # making sure its not in the ids
+    # making sure it's not in the ids
     if caseID not in IDS:
         # adding to the list
         IDS.append(caseID)
@@ -88,7 +91,7 @@ def task2(question):
             # checking if our word is in the list of keywords
             if arr[i] == keywords[k]:
                 # giving the solution
-                print(solutions[keywords[k]])
+
                 found = True
                 return solutions[keywords[k]]
     if not found:
@@ -99,27 +102,29 @@ def task2(question):
 
 
 def task3():
-    rep = report()
-    rep.Device = input("What device is it?")
-    rep.Brand = input("What brand is the phone?")
-    rep.Model = input("What model is the phone?")
-    rep.Version = input("What version is this phone?")
-    rep.Memory = input("How much memory does this phone have?")
-    rep.Problem = input("What is your problem?")
-    rep.Solution = task2(rep.Problem)
-    rep.caseID = caseIdGenerate(caseIds)
+    # init our class
+    rep = Report(input("What device is it?"), input("What brand is the phone?"), input("What model is the phone?"),
+                 input("What version is this phone?"), input("How much memory does this phone have?"),
+                 input("What is your problem?"), caseIdGenerate(caseIds))
+    # print solution
+    print(rep.getSolution())
 
 
-class report:
-    def __init__(self, Device, Brand, Model, Version, Memory, Problem, Solution, caseID):
+class Report:
+    # function gets called as soon as we use the class so we can assign it values
+    def __init__(self, Device, Brand, Model, Version, Memory, Problem, caseID):
         self.Device = Device
         self.Brand = Brand
         self.Model = Model
         self.Version = Version
         self.Memory = Memory
         self.Problem = Problem
-        self.Solution = Solution
+
         self.caseID = caseID
 
+    def getSolution(self):
+        # gives us our solution
+        return task2(self.Problem)
 
-task2()
+
+task3()
