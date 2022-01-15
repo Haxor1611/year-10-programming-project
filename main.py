@@ -108,6 +108,8 @@ def task3():
                  input("What is your problem?"), caseIdGenerate(caseIds))
     # print solution
     print(rep.getSolution())
+    if writeJson("report.json", rep):
+        print("Sent to a technician!")
 
 
 class Report:
@@ -125,6 +127,26 @@ class Report:
     def getSolution(self):
         # gives us our solution
         return task2(self.Problem)
+
+
+def writeJson(fileToWrite, report):
+    with open(fileToWrite, "a") as ftw:
+        jsonDump = json.dumps(report.__dict__)
+
+        ftw.writelines(jsonDump)
+        ftw.close()
+        return True
+
+
+def getLines(fileName):
+    with open(fileName, "r") as ftr:
+        count = 0
+        content = ftr.read()
+        contentList = content.split("\n")
+        for i in contentList:
+            if i:
+                count += 1
+        return count
 
 
 task3()
