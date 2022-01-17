@@ -2,6 +2,8 @@
 import random
 import time
 import json
+from collections import namedtuple
+from json import JSONEncoder
 
 # example for the program
 with open("IDS.json", "r") as r:
@@ -77,26 +79,26 @@ def task1():
                                         choice9 = input("Is the phone freezing?")
                                         if choice3 == "yes":
                                             print(solutions["freezes"])
+                                        else:
+                                            print("No solutions found.")
 
 
 def task2(question):
     found = False
     arr = question.split()
-    print(arr)
+
 
     # looping through the array of words from the question
     for i in range(0, len(arr)):
         # looping through the array of keywords
         for k in range(0, len(keywords)):
-            # checking if our word is in the list of keywords
+            # checking if our word is the current keyword we are currently iterating over.
             if arr[i] == keywords[k]:
                 # giving the solution
-
                 found = True
                 return solutions[keywords[k]]
     if not found:
         # no solution found
-        print("There is no current solution to this problem.")
         found = True
         return "No Solution"
 
@@ -129,6 +131,8 @@ class Report:
         return task2(self.Problem)
 
 
+# putting our report object into serialized json data. to be sent 'to a technician'
+
 def writeJson(fileToWrite, report):
     with open(fileToWrite, "a") as ftw:
         jsonDump = json.dumps(report.__dict__)
@@ -138,12 +142,13 @@ def writeJson(fileToWrite, report):
         return True
 
 
+# pretty self explanatory function
 def getLines(fileName):
     with open(fileName, "r") as ftr:
         count = 0
-        content = ftr.read()
-        contentList = content.split("\n")
-        for i in contentList:
+        fileContent = ftr.read()
+        contentArr = fileContent.split("\n")
+        for i in contentArr:
             if i:
                 count += 1
         return count
