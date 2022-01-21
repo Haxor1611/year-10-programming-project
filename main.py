@@ -87,7 +87,6 @@ def task2(question):
     found = False
     arr = question.split()
 
-
     # looping through the array of words from the question
     for i in range(0, len(arr)):
         # looping through the array of keywords
@@ -115,7 +114,7 @@ def task3():
 
 
 class Report:
-    # function gets called as soon as we use the class so we can assign it values
+    # function gets called as soon as we use the class, so we can assign it values
     def __init__(self, Device, Brand, Model, Version, Memory, Problem, caseID):
         self.Device = Device
         self.Brand = Brand
@@ -137,12 +136,13 @@ def writeJson(fileToWrite, report):
     with open(fileToWrite, "a") as ftw:
         jsonDump = json.dumps(report.__dict__)
 
-        ftw.writelines(jsonDump)
+        ftw.writelines(jsonDump + "\n")
         ftw.close()
         return True
 
 
-# pretty self explanatory function
+# pretty self-explanatory function
+
 def getLines(fileName):
     with open(fileName, "r") as ftr:
         count = 0
