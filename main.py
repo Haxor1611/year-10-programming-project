@@ -41,43 +41,43 @@ def task1():
     print("Welcome to Mobile Trouble shooting guide.")
     time.sleep(1)
     choice = input("Is the phone overheating?")
-    if choice == "yes":
+    if choice.lower() == "yes":
         print(solutions["overheating"])
     else:
         choice1 = input("Has the phone been dropped in water?")
-        if choice1 == "yes":
+        if choice1.lower() == "yes":
             print(solutions["wet"])
         else:
             choice2 = input("Have you dropped the phone?")
-            if choice2 == "yes":
+            if choice2.lower() == "yes":
                 print(solutions["dropped"])
             else:
                 choice3 = input("Are your apps loading?")
-                if choice3 == "yes":
+                if choice3.lower() == "yes":
                     print(solutions["apps"])
                 else:
                     choice4 = input("Is your screen not responding?")
-                    if choice3 == "yes":
+                    if choice4.lower() == "yes":
                         print(solutions["screen"])
                     else:
                         choice5 = input("Is the phone not turning on?")
-                        if choice3 == "yes":
+                        if choice5.lower() == "yes":
                             print(solutions["power"])
                         else:
                             choice6 = input("Is your phone slow?")
-                            if choice3 == "yes":
+                            if choice6.lower() == "yes":
                                 print(solutions["slow"])
                             else:
                                 choice7 = input("Is the battery running out?")
-                                if choice3 == "yes":
+                                if choice7.lower() == "yes":
                                     print(solutions["battery"])
                                 else:
                                     choice8 = input("Is the storage full?")
-                                    if choice3 == "yes":
+                                    if choice8.lower() == "yes":
                                         print(solutions["storage"])
                                     else:
                                         choice9 = input("Is the phone freezing?")
-                                        if choice3 == "yes":
+                                        if choice9.lower() == "yes":
                                             print(solutions["freezes"])
                                         else:
                                             print("No solutions found.")
@@ -135,7 +135,7 @@ class Report:
 def writeJson(fileToWrite, report):
     with open(fileToWrite, "a") as ftw:
         jsonDump = json.dumps(report.__dict__)
-
+        
         ftw.writelines(jsonDump + "\n")
         ftw.close()
         return True
