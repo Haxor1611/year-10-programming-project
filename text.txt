@@ -1,1 +1,11 @@
-s
+def caseIdGenerate(IDS):
+    # getting a random integer
+    caseID = random.randint(1, 9999)
+    # making sure it's not in the ids
+    if caseID not in IDS:
+        # adding to the list
+        IDS.append(caseID)
+        return caseID
+    else:
+        # recursion
+        caseIdGenerate(IDS)

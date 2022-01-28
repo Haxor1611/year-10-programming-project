@@ -40,6 +40,7 @@ def caseIdGenerate(IDS):
 def task1():
     print("Welcome to Mobile Trouble shooting guide.")
     time.sleep(1)
+
     choice = input("Is the phone overheating?")
     if choice.lower() == "yes":
         print(solutions["overheating"])
@@ -84,9 +85,10 @@ def task1():
 
 
 def task2(question):
-    found = False
+    question = question.lower()
     arr = question.split()
-
+    solutionsFound = 0
+    sols = []
     # looping through the array of words from the question
     for i in range(0, len(arr)):
         # looping through the array of keywords
@@ -94,12 +96,17 @@ def task2(question):
             # checking if our word is the current keyword we are currently iterating over.
             if arr[i] == keywords[k]:
                 # giving the solution
-                found = True
-                return solutions[keywords[k]]
-    if not found:
+
+                solutionsFound = solutionsFound + 1
+                sols.append(solutions[keywords[k]])
+                continue
+
+    if len(sols) == 0:
         # no solution found
-        found = True
         return "No Solution"
+    else:
+        print(len(sols), " solutions found! Printing the solution/s now. \n")
+        return "\n".join(sols)
 
 
 def task3():
@@ -110,6 +117,7 @@ def task3():
     # print solution
     print(rep.getSolution())
     if writeJson("report.json", rep):
+        writeCase()
         print("Sent to a technician!")
 
 
@@ -135,7 +143,7 @@ class Report:
 def writeJson(fileToWrite, report):
     with open(fileToWrite, "a") as ftw:
         jsonDump = json.dumps(report.__dict__)
-        
+
         ftw.writelines(jsonDump + "\n")
         ftw.close()
         return True
@@ -152,6 +160,13 @@ def getLines(fileName):
             if i:
                 count += 1
         return count
+
+
+def writeCase():
+    with open("ids.json", "w") as file:
+        file.truncate()
+        file.write(str(caseIds))
+        file.close()
 
 
 task3()
