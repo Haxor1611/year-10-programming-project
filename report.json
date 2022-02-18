@@ -1,13 +1,1 @@
-[{"Device": "a", "Brand": "a", "Model": "a", "Version": "a", "Memory": "a", "Problem": "i dropped my phone", "caseID": 3563},
-{"Device": "b", "Brand": "b", "Model": "b", "Version": "b", "Memory": "b", "Problem": "my phone is overheating", "caseID": 4286},{"Device": "a", "Brand": "a", "Model": "a", "Version": "a", "Memory": "a", "Problem": "my phone is overheating", "caseID": 231}{"Device": "a", "Brand": "a", "Model": "a", "Version": "a", "Memory": "a", "Problem": "my phone is overheating", "caseID": 2790}{"Problem": "my phone is overheating", "Version": "a", "Brand": "a", "Memory": "a", "caseID": 1096, "Model": "a", "Device": "a"}{"Version": "g", "Model": "g", "Memory": "g", "Problem": "My phone is overheating", "caseID": 2959, "Device": "g", "Brand": "g"}
-{"Problem": "My phone is overheating", "Device": "iphone", "caseID": 5662, "Version": "normal", "Brand": "iphone", "Memory": "128GB", "Model": "11"}
-{"Model": "a", "Brand": "a", "Version": "a", "Memory": "a", "Device": "a", "Problem": "my battery doesnt charge", "caseID": 1039}
-{"Device": "a", "caseID": 4281, "Brand": "a", "Problem": "my phone is broken and doesnt charge", "Memory": "a", "Version": "a", "Model": "a"}
-{"Memory": "a", "Brand": "a", "Device": "a", "Version": "a", "Problem": "my phone is overheating and doesnt charge", "caseID": 2449, "Model": "a"}
-{"Model": "a", "Problem": "my phone is overheating and doesnt charge", "Device": "a", "caseID": 6666, "Version": "a", "Brand": "a", "Memory": "a"}
-{"Brand": "a", "Version": "a", "Memory": "a", "caseID": 2558, "Problem": "i dropped my screen", "Device": "a", "Model": "a"}
-{"Problem": "dropped storage hot dies", "Version": "a", "Memory": "a", "Device": "a", "Model": "a", "Brand": "a", "caseID": 1174}
-{"caseID": 3816, "Brand": "a", "Problem": "charge die drop freezes wet", "Memory": "a", "Version": "a", "Model": "a", "Device": "a"}
-{"Version": "a", "Memory": "a", "Brand": "a", "Model": "a", "caseID": 7175, "Problem": "overheating dropped dies wet", "Device": "a"}
-{"caseID": 5364, "Version": "a", "Brand": "a", "Memory": "a", "Device": "a", "Model": "a", "Problem": "my phone is dropped and overheating"}
-{"Problem": "my phone is overheating", "Brand": "a", "caseID": 7242, "Device": "a", "Version": "a", "Model": "a", "Memory": "a"}
+{"Memory": "a", "Brand": "a", "Version": "a", "Device": "a", "Problem": "my dropped phone is overheating", "caseID": 3881, "Model": "a"}

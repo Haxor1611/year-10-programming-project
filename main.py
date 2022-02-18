@@ -2,25 +2,20 @@
 import random
 import time
 import json
-from collections import namedtuple
-from json import JSONEncoder
+
 
 # example for the program
-with open("IDS.json", "r") as r:
-    casestring = r.read()
-    r.close()
 
-caseIds = json.loads(casestring)
-with open("keywords.json", "r") as f:
-    keywordString = f.read()
-    f.close()
-with open("solutions.json", "r") as j:
-    solutionString = j.read()
-    j.close()
+def readJsonIntoDict(file):
+    with open(file, "r") as f:
+        fileString = f.read()
+        f.close()
+    return json.loads(fileString)
 
-keywords = json.loads(keywordString)
 
-solutions = json.loads(solutionString)
+keywords = readJsonIntoDict("keywords.json")
+solutions = readJsonIntoDict("solutions.json")
+caseIds = readJsonIntoDict("IDS.json")
 
 
 # generating the case id
@@ -87,7 +82,6 @@ def task1():
 def task2(question):
     question = question.lower()
     arr = question.split()
-    solutionsFound = 0
     sols = []
     # looping through the array of words from the question
     for i in range(0, len(arr)):
@@ -97,7 +91,6 @@ def task2(question):
             if arr[i] == keywords[k]:
                 # giving the solution
 
-                solutionsFound = solutionsFound + 1
                 sols.append(solutions[keywords[k]])
                 continue
 
@@ -106,6 +99,7 @@ def task2(question):
         return "No Solution"
     else:
         print(len(sols), " solutions found! Printing the solution/s now. \n")
+        # adds all the solutions found
         return "\n".join(sols)
 
 
@@ -149,21 +143,10 @@ def writeJson(fileToWrite, report):
         return True
 
 
-# pretty self-explanatory function
-
-def getLines(fileName):
-    with open(fileName, "r") as ftr:
-        count = 0
-        fileContent = ftr.read()
-        contentArr = fileContent.split("\n")
-        for i in contentArr:
-            if i:
-                count += 1
-        return count
-
-
 def writeCase():
+    # writes our current case id to the case ids json file
     with open("ids.json", "w") as file:
+        # empties the file first
         file.truncate()
         file.write(str(caseIds))
         file.close()
