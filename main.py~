@@ -99,7 +99,7 @@ def task2(question):
         return "No Solution"
     else:
         print(len(sols), " solutions found! Printing the solution/s now. \n")
-        # adds all the solutions to an array
+        # adds all the solutions found
         return str("\n".join(sols) + "\n")
 
 
